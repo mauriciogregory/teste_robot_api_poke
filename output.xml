@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.4 on linux)" generated="20221123 22:07:12.359" rpa="false" schemaversion="3">
+<suite id="s1" name="Poke" source="/home/mauricio/teste_robot_api_poke/poke.robot">
+<test id="s1-t1" name="Validação da Poke API" line="7">
+<kw name="Consulta de Pokemon" library="poke">
+<kw name="Verificar cor" library="poke">
+<arg>red</arg>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>pokeAPI</arg>
+<arg>${HOST}${COR}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221123 22:07:12.996" level="INFO">Creating Session using : alias=pokeAPI, url=https://pokeapi.co/api/v2/pokemon-color/red, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221123 22:07:12.994" endtime="20221123 22:07:13.000"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>pokeAPI</arg>
+<arg>${HOST}${COR}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221123 22:07:13.159" level="INFO">GET Request : url=https://pokeapi.co/api/v2/pokemon-color/red 
+ path_url=/api/v2/pokemon-color/red 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221123 22:07:13.160" level="INFO">GET Response : url=https://pokeapi.co/api/v2/pokemon-color/red 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Nov 2022 01:07:13 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1122', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'Cache-Control': 'public, max-age=86400, s-maxage=86400', 'Content-Encoding': 'gzip', 'etag': 'W/"1cc7-JlFGgE6wvHennt5O5anJFsjN5Tk"', 'function-execution-id': 'tpgwstjfs1w9', 'strict-transport-security': 'max-age=31556926', 'x-cloud-trace-context': '98a5435e6dd70cf6bb44cdc9e9dc8e81', 'x-country-code': 'BR', 'x-powered-by': 'Express', 'x-served-by': 'cache-cgh11143-CGH', 'x-cache': 'MISS', 'x-cache-hits': '0', 'x-timer': 'S1669238140.467350,VS0,VE404', 'vary': 'Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400', 'CF-Cache-Status': 'HIT', 'Age': '13893', 'Accept-Ranges': 'bytes', 'Server-Timing': 'cf-q-config;dur=3.9999995351536e-06', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=wq%2BnTdxzC97DYV9sJ7UDeO2AqmgLaBsjSjTsva0cmbC6ZevIta2F3WXd2KSBjWrV5Ru7IgYu3hENMNBcO5zkWiU%2FErnIWhV3Yd9EfeXfpsFOHSJ5VIXRe1BGEVWO"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '76ee3f171ed802f0-GRU'} 
+ body={"id":8,"name":"red","names":[{"language":{"name":"ja-Hrkt","url":"https://pokeapi.co/api/v2/language/1/"},"name":"あかいろ"},{"language":{"name":"ko","url":"https://pokeapi.co/api/v2/language/3/"},"name":"빨강"},{"language":{"name":"zh-Hant","url":"https://pokeapi.co/api/v2/language/4/"},"name":"紅色"},{"language":{"name":"fr","url":"https://pokeapi.co/api/v2/language/5/"},"name":"Rouge"},{"language":{"name":"de","url":"https://pokeapi.co/api/v2/language/6/"},"name":"Rot"},{"language":{"name":"es","url":"https://pokeapi.co/api/v2/language/7/"},"name":"Rojo"},{"language":{"name":"it","url":"https://pokeapi.co/api/v2/language/8/"},"name":"Rosso"},{"language":{"name":"en","url":"https://pokeapi.co/api/v2/language/9/"},"name":"Red"},{"language":{"name":"ja","url":"https://pokeapi.co/api/v2/language/11/"},"name":"赤色"},{"language":{"name":"zh-Hans","url":"https://pokeapi.co/api/v2/language/12/"},"name":"红色"}],"pokemon_species":[{"name":"charmander","url":"https://pokeapi.co/api/v2/pokemon-species/4/"},{"name":"paras","url":"https://pokeapi.co/api/v2/pokemon-species/46/"},{"name":"charmeleon","url":"https://pokeapi.co/api/v2/pokemon-species/5/"},{"name":"charizard","url":"https://pokeapi.co/api/v2/pokemon-species/6/"},{"name":"vileplume","url":"https://pokeapi.co/api/v2/pokemon-species/45/"},{"name":"parasect","url":"https://pokeapi.co/api/v2/pokemon-species/47/"},{"name":"krabby","url":"https://pokeapi.co/api/v2/pokemon-species/98/"},{"name":"voltorb","url":"https://pokeapi.co/api/v2/pokemon-species/100/"},{"name":"goldeen","url":"https://pokeapi.co/api/v2/pokemon-species/118/"},{"name":"magikarp","url":"https://pokeapi.co/api/v2/pokemon-species/129/"},{"name":"kingler","url":"https://pokeapi.co/api/v2/pokemon-species/99/"},{"name":"electrode","url":"https://pokeapi.co/api/v2/pokemon-species/101/"},{"name":"seaking","url":"https://pokeapi.co/api/v2/pokemon-species/119/"},{"name":"jynx","url":"https://pokeapi.co/api/v2/pokemon-species/124/"},{"name":"magmar","url":"https://pokeapi.co/api/v2/pokemon-species/126/"},{"name":"flareon","url":"https://pokeapi.co/api/v2/pokemon-species/136/"},{"name":"ledyba","url":"https://pokeapi.co/api/v2/pokemon-species/165/"},{"name":"yanma","url":"https://pokeapi.co/api/v2/pokemon-species/193/"},{"name":"slugma","url":"https://pokeapi.co/api/v2/pokemon-species/218/"},{"name":"delibird","url":"https://pokeapi.co/api/v2/pokemon-species/225/"},{"name":"ledian","url":"https://pokeapi.co/api/v2/pokemon-species/166/"},{"name":"ariados","url":"https://pokeapi.co/api/v2/pokemon-species/168/"},{"name":"scizor","url":"https://pokeapi.co/api/v2/pokemon-species/212/"},{"name":"magcargo","url":"https://pokeapi.co/api/v2/pokemon-species/219/"},{"name":"octillery","url":"https://pokeapi.co/api/v2/pokemon-species/224/"},{"name":"magby","url":"https://pokeapi.co/api/v2/pokemon-species/240/"},{"name":"ho-oh","url":"https://pokeapi.co/api/v2/pokemon-species/250/"},{"name":"torchic","url":"https://pokeapi.co/api/v2/pokemon-species/255/"},{"name":"wurmple","url":"https://pokeapi.co/api/v2/pokemon-species/265/"},{"name":"porygon2","url":"https://pokeapi.co/api/v2/pokemon-species/233/"},{"name":"combusken","url":"https://pokeapi.co/api/v2/pokemon-species/256/"},{"name":"blaziken","url":"https://pokeapi.co/api/v2/pokemon-species/257/"},{"name":"carvanha","url":"https://pokeapi.co/api/v2/pokemon-species/318/"},{"name":"solrock","url":"https://pokeapi.co/api/v2/pokemon-species/338/"},{"name":"corphish","url":"https://pokeapi.co/api/v2/pokemon-species/341/"},{"name":"medicham","url":"https://pokeapi.co/api/v2/pokemon-species/308/"},{"name":"camerupt","url":"https://pokeapi.co/api/v2/pokemon-species/323/"},{"name":"crawdaunt","url":"https://pokeapi.co/api/v2/pokemon-species/342/"},{"name":"latias","url":"https://pokeapi.co/api/v2/pokemon-species/380/"},{"name":"groudon","url":"https://pokeapi.co/api/v2/pokemon-species/383/"},{"name":"deoxys","url":"https://pokeapi.co/api/v2/pokemon-species/386/"},{"name":"kricketot","url":"https://pokeapi.co/api/v2/pokemon-species/401/"},{"name":"kricketune","url":"https://pokeapi.co/api/v2/pokemon-species/402/"},{"name":"rotom","url":"https://pokeapi.co/api/v2/pokemon-species/479/"},{"name":"tepig","url":"https://pokeapi.co/api/v2/pokemon-species/498/"},{"name":"pansear","url":"https://pokeapi.co/api/v2/pokemon-species/513/"},{"name":"magmortar","url":"https://pokeapi.co/api/v2/pokemon-species/467/"},{"name":"porygon-z","url":"https://pokeapi.co/api/v2/pokemon-species/474/"},{"name":"pignite","url":"https://pokeapi.co/api/v2/pokemon-species/499/"},{"name":"emboar","url":"https://pokeapi.co/api/v2/pokemon-species/500/"},{"name":"simisear","url":"https://pokeapi.co/api/v2/pokemon-species/514/"},{"name":"throh","url":"https://pokeapi.co/api/v2/pokemon-species/538/"},{"name":"venipede","url":"https://pokeapi.co/api/v2/pokemon-species/543/"},{"name":"darumaka","url":"https://pokeapi.co/api/v2/pokemon-species/554/"},{"name":"dwebble","url":"https://pokeapi.co/api/v2/pokemon-species/557/"},{"name":"scolipede","url":"https://pokeapi.co/api/v2/pokemon-species/545/"},{"name":"krookodile","url":"https://pokeapi.co/api/v2/pokemon-species/553/"},{"name":"darmanitan","url":"https://pokeapi.co/api/v2/pokemon-species/555/"},{"name":"crustle","url":"https://pokeapi.co/api/v2/pokemon-species/558/"},{"name":"scrafty","url":"https://pokeapi.co/api/v2/pokemon-species/560/"},{"name":"shelmet","url":"https://pokeapi.co/api/v2/pokemon-species/616/"},{"name":"druddigon","url":"https://pokeapi.co/api/v2/pokemon-species/621/"},{"name":"pawniard","url":"https://pokeapi.co/api/v2/pokemon-species/624/"},{"name":"heatmor","url":"https://pokeapi.co/api/v2/pokemon-species/631/"},{"name":"fennekin","url":"https://pokeapi.co/api/v2/pokemon-species/653/"},{"name":"fletchling","url":"https://pokeapi.co/api/v2/pokemon-species/661/"},{"name":"accelgor","url":"https://pokeapi.co/api/v2/pokemon-species/617/"},{"name":"bisharp","url":"https://pokeapi.co/api/v2/pokemon-species/625/"},{"name":"braviary","url":"https://pokeapi.co/api/v2/pokemon-species/628/"},{"name":"braixen","url":"https://pokeapi.co/api/v2/pokemon-species/654/"},{"name":"delphox","url":"https://pokeapi.co/api/v2/pokemon-species/655/"},{"name":"fletchinder","url":"https://pokeapi.co/api/v2/pokemon-species/662/"},{"name":"talonflame","url":"https://pokeapi.co/api/v2/pokemon-species/663/"},{"name":"yveltal","url":"https://pokeapi.co/api/v2/pokemon-species/717/"},{"name":"litten","url":"https://pokeapi.co/api/v2/pokemon-species/725/"},{"name":"oricorio","url":"https://pokeapi.co/api/v2/pokemon-species/741/"},{"name":"torracat","url":"https://pokeapi.co/api/v2/pokemon-species/726/"},{"name":"incineroar","url":"https://pokeapi.co/api/v2/pokemon-species/727/"},{"name":"turtonator","url":"https://pokeapi.co/api/v2/pokemon-species/776/"},{"name":"tapu-bulu","url":"https://pokeapi.co/api/v2/pokemon-species/787/"},{"name":"buzzwole","url":"https://pokeapi.co/api/v2/pokemon-species/794/"},{"name":"sizzlipede","url":"https://pokeapi.co/api/v2/pokemon-species/850/"},{"name":"zamazenta","url":"https://pokeapi.co/api/v2/pokemon-species/889/"},{"name":"centiskorch","url":"https://pokeapi.co/api/v2/pokemon-species/851/"},{"name":"tyrantrum","url":"https://pokeapi.co/api/v2/pokemon-species/697/"},{"name":"orbeetle","url":"https://pokeapi.co/api/v2/pokemon-species/826/"}]} 
+ </msg>
+<msg timestamp="20221123 22:07:13.162" level="INFO">/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1015: InsecureRequestWarning: Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20221123 22:07:13.165" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221123 22:07:13.000" endtime="20221123 22:07:13.165"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20221123 22:07:13.167" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221123 22:07:13.166" endtime="20221123 22:07:13.168"/>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>name</arg>
+<arg>${COR}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20221123 22:07:13.168" endtime="20221123 22:07:13.174"/>
+</kw>
+<status status="PASS" starttime="20221123 22:07:12.993" endtime="20221123 22:07:13.175"/>
+</kw>
+<kw name="Verificar id" library="poke">
+<arg>1</arg>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${URL_Int}</var>
+<arg>${URL}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20221123 22:07:13.178" level="INFO">${URL_Int} = 1</msg>
+<status status="PASS" starttime="20221123 22:07:13.177" endtime="20221123 22:07:13.178"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>pokeAPI</arg>
+<arg>${HOST}${URL_Int}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221123 22:07:13.180" level="INFO">Creating Session using : alias=pokeAPI, url=https://pokeapi.co/api/v2/pokemon-color/1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221123 22:07:13.179" endtime="20221123 22:07:13.180"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${RESPOSTA_ID}</var>
+<arg>pokeAPI</arg>
+<arg>${HOST}${URL_Int}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221123 22:07:13.342" level="INFO">GET Request : url=https://pokeapi.co/api/v2/pokemon-color/1 
+ path_url=/api/v2/pokemon-color/1 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221123 22:07:13.343" level="INFO">GET Response : url=https://pokeapi.co/api/v2/pokemon-color/1 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Nov 2022 01:07:13 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '756', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'Cache-Control': 'public, max-age=86400, s-maxage=86400', 'Content-Encoding': 'gzip', 'etag': 'W/"10dc-x49sH7MUw0lUOETunProKFAMjxU"', 'function-execution-id': 'wmvc84ecz8p1', 'strict-transport-security': 'max-age=31556926', 'x-cloud-trace-context': '78e173666d8c64043e7f95856bd7976c;o=1', 'x-country-code': 'BR', 'x-orig-accept-language': 'pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'x-powered-by': 'Express', 'x-served-by': 'cache-cgh11140-CGH', 'x-cache': 'HIT', 'x-cache-hits': '1', 'x-timer': 'S1669058096.796731,VS0,VE348', 'vary': 'Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400', 'CF-Cache-Status': 'HIT', 'Age': '6981', 'Accept-Ranges': 'bytes', 'Server-Timing': 'cf-q-config;dur=3.0000010156073e-06', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=weybbiMSk9Dtf3kW7D3Qzl2S%2BdGUTP9%2FKUcxol3do9ENDcHnTytc8HTRWOLynvhhIzo8t%2Biyr8ztuVeH7B1%2BJGTh6NOoDOWp3GEtCdG%2F2Zbr8Togyzyv8t4R38Uv"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '76ee3f182d87a4b7-GRU'} 
+ body={"id":1,"name":"black","names":[{"language":{"name":"ja-Hrkt","url":"https://pokeapi.co/api/v2/language/1/"},"name":"くろいろ"},{"language":{"name":"ko","url":"https://pokeapi.co/api/v2/language/3/"},"name":"검정"},{"language":{"name":"zh-Hant","url":"https://pokeapi.co/api/v2/language/4/"},"name":"黑色"},{"language":{"name":"fr","url":"https://pokeapi.co/api/v2/language/5/"},"name":"Noir"},{"language":{"name":"de","url":"https://pokeapi.co/api/v2/language/6/"},"name":"Schwarz"},{"language":{"name":"es","url":"https://pokeapi.co/api/v2/language/7/"},"name":"Negro"},{"language":{"name":"it","url":"https://pokeapi.co/api/v2/language/8/"},"name":"Nero"},{"language":{"name":"en","url":"https://pokeapi.co/api/v2/language/9/"},"name":"Black"},{"language":{"name":"ja","url":"https://pokeapi.co/api/v2/language/11/"},"name":"黒色"},{"language":{"name":"zh-Hans","url":"https://pokeapi.co/api/v2/language/12/"},"name":"黑色"}],"pokemon_species":[{"name":"snorlax","url":"https://pokeapi.co/api/v2/pokemon-species/143/"},{"name":"murkrow","url":"https://pokeapi.co/api/v2/pokemon-species/198/"},{"name":"unown","url":"https://pokeapi.co/api/v2/pokemon-species/201/"},{"name":"sneasel","url":"https://pokeapi.co/api/v2/pokemon-species/215/"},{"name":"umbreon","url":"https://pokeapi.co/api/v2/pokemon-species/197/"},{"name":"houndour","url":"https://pokeapi.co/api/v2/pokemon-species/228/"},{"name":"houndoom","url":"https://pokeapi.co/api/v2/pokemon-species/229/"},{"name":"mawile","url":"https://pokeapi.co/api/v2/pokemon-species/303/"},{"name":"spoink","url":"https://pokeapi.co/api/v2/pokemon-species/325/"},{"name":"seviper","url":"https://pokeapi.co/api/v2/pokemon-species/336/"},{"name":"shuppet","url":"https://pokeapi.co/api/v2/pokemon-species/353/"},{"name":"duskull","url":"https://pokeapi.co/api/v2/pokemon-species/355/"},{"name":"claydol","url":"https://pokeapi.co/api/v2/pokemon-species/344/"},{"name":"banette","url":"https://pokeapi.co/api/v2/pokemon-species/354/"},{"name":"dusclops","url":"https://pokeapi.co/api/v2/pokemon-species/356/"},{"name":"chatot","url":"https://pokeapi.co/api/v2/pokemon-species/441/"},{"name":"munchlax","url":"https://pokeapi.co/api/v2/pokemon-species/446/"},{"name":"honchkrow","url":"https://pokeapi.co/api/v2/pokemon-species/430/"},{"name":"giratina","url":"https://pokeapi.co/api/v2/pokemon-species/487/"},{"name":"darkrai","url":"https://pokeapi.co/api/v2/pokemon-species/491/"},{"name":"blitzle","url":"https://pokeapi.co/api/v2/pokemon-species/522/"},{"name":"weavile","url":"https://pokeapi.co/api/v2/pokemon-species/461/"},{"name":"dusknoir","url":"https://pokeapi.co/api/v2/pokemon-species/477/"},{"name":"zebstrika","url":"https://pokeapi.co/api/v2/pokemon-species/523/"},{"name":"sigilyph","url":"https://pokeapi.co/api/v2/pokemon-species/561/"},{"name":"yamask","url":"https://pokeapi.co/api/v2/pokemon-species/562/"},{"name":"lampent","url":"https://pokeapi.co/api/v2/pokemon-species/608/"},{"name":"zekrom","url":"https://pokeapi.co/api/v2/pokemon-species/644/"},{"name":"scatterbug","url":"https://pokeapi.co/api/v2/pokemon-species/664/"},{"name":"spewpa","url":"https://pokeapi.co/api/v2/pokemon-species/665/"},{"name":"pikipek","url":"https://pokeapi.co/api/v2/pokemon-species/731/"},{"name":"salandit","url":"https://pokeapi.co/api/v2/pokemon-species/757/"},{"name":"trumbeak","url":"https://pokeapi.co/api/v2/pokemon-species/732/"},{"name":"toucannon","url":"https://pokeapi.co/api/v2/pokemon-species/733/"},{"name":"salazzle","url":"https://pokeapi.co/api/v2/pokemon-species/758/"},{"name":"pyukumuku","url":"https://pokeapi.co/api/v2/pokemon-species/771/"},{"name":"xurkitree","url":"https://pokeapi.co/api/v2/pokemon-species/796/"},{"name":"guzzlord","url":"https://pokeapi.co/api/v2/pokemon-species/799/"},{"name":"necrozma","url":"https://pokeapi.co/api/v2/pokemon-species/800/"},{"name":"rolycoly","url":"https://pokeapi.co/api/v2/pokemon-species/837/"},{"name":"carkol","url":"https://pokeapi.co/api/v2/pokemon-species/838/"},{"name":"coalossal","url":"https://pokeapi.co/api/v2/pokemon-species/839/"},{"name":"spectrier","url":"https://pokeapi.co/api/v2/pokemon-species/897/"},{"name":"chandelure","url":"https://pokeapi.co/api/v2/pokemon-species/609/"},{"name":"overqwil","url":"https://pokeapi.co/api/v2/pokemon-species/904/"}]} 
+ </msg>
+<msg timestamp="20221123 22:07:13.343" level="INFO">/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1015: InsecureRequestWarning: Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20221123 22:07:13.344" level="INFO">${RESPOSTA_ID} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221123 22:07:13.181" endtime="20221123 22:07:13.345"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA_ID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 22:07:13.346" level="INFO">&lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221123 22:07:13.345" endtime="20221123 22:07:13.347"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPOSTA_ID}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20221123 22:07:13.348" level="INFO">${RESPOSTA_ID} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221123 22:07:13.347" endtime="20221123 22:07:13.349"/>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA_ID.json()}</arg>
+<arg>id</arg>
+<arg>${URL_Int}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20221123 22:07:13.350" endtime="20221123 22:07:13.353"/>
+</kw>
+<status status="PASS" starttime="20221123 22:07:13.175" endtime="20221123 22:07:13.354"/>
+</kw>
+<kw name="Conferir Status Code" library="poke">
+<arg>200</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${STATUS_CODE}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20221123 22:07:13.363" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 22:07:13.361" endtime="20221123 22:07:13.363"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA_ID.status_code}</arg>
+<arg>${STATUS_CODE}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20221123 22:07:13.366" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 22:07:13.364" endtime="20221123 22:07:13.367"/>
+</kw>
+<status status="PASS" starttime="20221123 22:07:13.356" endtime="20221123 22:07:13.368"/>
+</kw>
+<status status="PASS" starttime="20221123 22:07:12.992" endtime="20221123 22:07:13.369"/>
+</kw>
+<status status="PASS" starttime="20221123 22:07:12.990" endtime="20221123 22:07:13.371"/>
+</test>
+<status status="PASS" starttime="20221123 22:07:12.372" endtime="20221123 22:07:13.376"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Poke">Poke</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
